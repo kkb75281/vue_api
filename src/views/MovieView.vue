@@ -27,10 +27,10 @@
               :modules="modules"
               class="mySwiper"
             >
-              <swiper-slide v-for="slider in sliders" :key="slider.id">
+              <swiper-slide v-for="(slider, index) in sliders" :key="slider.id">
                 <div class="item">
                   <a :href="`https://image.tmdb.org/movie/${slider.id}`">
-                    <!-- <span class="rank">{{ slider.popularity }}</span> -->
+                    <span class="rank">{{ index }}</span>
                     <img
                       :src="`https://image.tmdb.org/t/p/w500/${slider.poster_path}`"
                       :alt="slider.title"
@@ -184,7 +184,7 @@ export default {
         color: #000;
         position: absolute;
         left: 20px;
-        top: 20px;
+        top: 27px;
         width: 30px;
         height: 30px;
         border-radius: 50px;
@@ -202,7 +202,7 @@ export default {
 .movie__slider {
   .swiper {
     width: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
   }
   .swiper-slide {
     background-position: center;
@@ -245,7 +245,8 @@ export default {
 }
 
 .movie__search {
-  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 50px;
 
   .container {
     position: relative;
