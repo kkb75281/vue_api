@@ -30,7 +30,7 @@
               <swiper-slide v-for="(slider, index) in sliders" :key="slider.id">
                 <div class="item">
                   <a :href="`https://image.tmdb.org/movie/${slider.id}`">
-                    <span class="rank">{{ index }}</span>
+                    <span class="rank">{{ index + 1 }}</span>
                     <img
                       :src="`https://image.tmdb.org/t/p/w500/${slider.poster_path}`"
                       :alt="slider.title"
@@ -131,7 +131,7 @@ export default {
       )
         .then((response) => response.json())
         .then((result) => (sliders.value = result.results))
-        .then((result) => console.log(result))
+        // .then((result) => console.log(result))
         .catch((error) => console.log(error));
     };
     TopMovies();
@@ -246,7 +246,7 @@ export default {
 
 .movie__search {
   margin-top: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 
   .container {
     position: relative;
